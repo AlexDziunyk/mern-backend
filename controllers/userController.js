@@ -13,8 +13,6 @@ const loginUser = async (req, res) => {
         const user = await User.login(login, password)
 
         //create a token
-        console.log(user)
-        console.log(createToken(user._id))
         const token = createToken(user._id)
 
         res.status(200).json({login, token})
