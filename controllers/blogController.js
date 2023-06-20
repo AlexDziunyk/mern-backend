@@ -6,7 +6,7 @@ const getAllBlogs = async (req, res) => {
     const user_id = req.user._id
 
     try {
-        const blogs = await Blog.find({}).sort({ createdAt: -1 });
+        const blogs = await Blog.find({user_id}).sort({ createdAt: -1 });
         res.status(200).json(blogs);
       } catch (error) {
         res.status(500).json({ error: 'Internal Server Error' });
