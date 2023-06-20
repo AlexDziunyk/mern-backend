@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const blogRoutes = require('./routes/blogs')
 const userRoutes = require('./routes/users')
-// const favicon = require('express-favicon');
+const favicon = require('express-favicon');
 
 
 //express app
@@ -14,7 +14,7 @@ app.use(cors())
 
 //middleware
 app.use(express.json())
-// app.use(favicon(__dirname + '/public/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 
 app.get('/', (req, res) => {
