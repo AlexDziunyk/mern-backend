@@ -10,10 +10,10 @@ const userRoutes = require('./routes/users')
 //express app
 const app = express()
 
-app.use(cors())
 
 //middleware
 app.use(express.json())
+app.use(cors())
 // app.use(favicon(__dirname + '/public/favicon.ico'));
 
 
@@ -28,7 +28,7 @@ app.use('/api/user', userRoutes)
 //connect to mongodb
 mongoose.connect(process.env.MONGO_DB)
     .then(() => {
-        app.listen(process.env.PORT, () => {
+        app.listen(process.env.PORT || 4040, () => {
             console.log('starting the server')
         })
     })
