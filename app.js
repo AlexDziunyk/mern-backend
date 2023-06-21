@@ -18,7 +18,7 @@ app.use(express.json())
 
 
 app.get('/', (req, res) => {
-    res.redirect('/api/blogs')
+    res.redirect(303, '/api/blogs')
 })
 
 //routes
